@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>funny tweet generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            function replaceText(){
+                //import arrays of possible texts
+                //add what you would like here:
+                var first = ["played softball growing up", "played soccer growing up", "grew up in Belfast", "broke your arm in gym class as a child", "wore glasses growing up", "had small feet growing up", "ran into a tree while sledding as a kid", "were a picky eater growing up", "hated olives growing up", "loved pizza growing up", "liked cheetos growing up", "led the French to victory over the English as a teen", "loved the Scholastic Book Fair growing up", "loved computer lab in elementary school", "had a bad haircut growing up", "went to your senior prom", "skipped your senior prom", "loved Jurassic Park as a kid", "were on student council in high school", "had an unhealthy obsession with Estonia growing up", "hated technology growing up", "took AP US History in highschool"];
+                var second = ["support the Dallas Cowboys now", "have a bad haircut now", "are terrified of raccoons now", "only listen to experimental hiphop now", "are fluent in Estonian now", "have moved to a cabin in the woods of Montana", "live in Paraguay now", "are receiving annual payments of $1.19 million from the New York Mets until you are 72", "converse solely in rhyme now", "support Manchester City now", "drowning in credit card debt now", "clap at the end of movies now"];
+                
+                //choosing random texts
+                var firstIndex = Math.floor(Math.random() * first.length);
+                var secondIndex = Math.floor(Math.random() * second.length);
+                var firstRandom = first[firstIndex];
+                var secondRandom = second[secondIndex];
+                
+                //constructing final string
+                var startText = "If you ";
+                var middleText = ", then you 100% ";
+                var endText = ".";
+                var output = startText.concat(firstRandom, middleText, secondRandom, endText);
+
+                //outputting to page
+                $("#text").html(output);
+            }
+            replaceText();
+            $("#genButton").on("click", replaceText);
+        });
+    </script>
+</head>
+
+<body>
+    <main>
+        <div class="container-fluid" style="padding-top: 2rem;">
+            <div class="row">
+                <div class='col-1'></div>
+                <div class="col-10 text-center">
+                    <h1>funny tweet generator</h1>
+                    <p style="padding-top: 2rem;" class="display-4" id="text">text</p>
+                    <button style="margin-top: 2rem;"type="button" class="btn btn-primary" id="genButton">Generate new</button>
+                </div>
+                <div class='col-1'></div>
+            </div>
+            <div class="row" style="padding-top: 4rem;">
+                <div class='col-1'></div><div class="col-3"><p>created by bukowski</p></div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>
